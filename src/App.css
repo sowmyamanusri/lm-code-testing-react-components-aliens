@@ -10,3 +10,50 @@ body {
 	justify-content: center;
 	margin: 0;
 }
+html{
+   font-size: 1rem;
+}
+
+.container{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:center;
+	margin :5px;
+}
+
+.container > label{
+	font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    color: #333;
+    height: 20px;
+    width: 200px;
+    margin-top: 0.6rem;
+    margin-left: 0.6rem;
+    text-align: right;
+    margin-right:15px;
+    float:left;
+}
+.container>input,textarea,select{
+	height: 30px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 0.6rem;
+	padding: 0.3rem;
+	font-size:1rem;
+}
+
+.container:last-child{
+    margin:auto;
+	width:100px;
+	
+	
+}
+
+.container .btn{
+	margin-top:10px;
+	padding:10px 20px;
+	font-size: 1rem;
+	background-color:light-orange;
+}
