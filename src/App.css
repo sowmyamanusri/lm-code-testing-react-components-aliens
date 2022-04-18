@@ -57,3 +57,7 @@ html{
 	font-size: 1rem;
 	background-color:light-orange;
 }
+
+.errorMessage{
+	color:red;
+}
