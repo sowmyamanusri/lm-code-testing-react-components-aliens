@@ -22,7 +22,7 @@ const  SpeciesName :React.FC<{speciesName:string, onChangeSpeciesName:any}> = ({
     <>
     <div className ="container">
    <label htmlFor="speciesName">Species Name :  </label>
-    <input type ="text" id="speciesName" className = "speciesName"
+    <input type ="text" data-testid="speciesName" className = "speciesName"
      value = {speciesName} onChange ={(e)=>{const errorMessage =validate(e.target.value);
         setErrorMessage(errorMessage); onChangeSpeciesName(e);
         }} />

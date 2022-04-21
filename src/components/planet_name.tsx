@@ -13,7 +13,6 @@ const PlanetName : React.FC <PlanetNameProps> = ({planetName,onChangePlanetName}
             return ("Character should not be less than 2 and not more than 49 ");
         }else if(inputStr.match(/[^a-zA-Z0-9]/)){
          return("special characters are not allowed");
-      
   }
 }
   return(
