@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { render ,screen, fireEvent} from '@testing-library/react';
+ 
 import W12MForm from './W12MForm';
 
 test('renders form element', () => {
@@ -11,3 +12,16 @@ test('renders form element', () => {
 	// for example, the firstChild of our container should be our form element
 	expect(container.firstChild).toHaveClass('w12MForm');
 });
+
+it('render the component, the  input field should be present and its type id submit',()=>{
+	render(<W12MForm />)
+	const inputEl = screen.getByTestId("submit");
+	expect(inputEl).toBeInTheDocument();
+	expect(inputEl).toHaveAttribute("type","submit");
+
+  })
+
+ 
+
+
+

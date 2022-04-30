@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {ErrorMessage} from './error_msg';
-interface NumberOfBeingsProps{
+export interface NumberOfBeingsProps{
     numberOfBeings:number, 
     onChangeNumberOfBeings:(e:React.ChangeEvent<HTMLInputElement>)=>void;
 
@@ -23,10 +23,11 @@ const NumberOfBeings : React.FC<NumberOfBeingsProps> =({numberOfBeings,onChangeN
     <>
     <div className="container">
     <label htmlFor = "numberOfBeings" >Number of Beings : </label>
-    <input  type="number" id = "numberOfBeings" value ={numberOfBeings} onChange={(e)=>{const errorMessage =validate(e.target.value);
+    <input  type="number" data-testid = "numberOfBeings" value ={numberOfBeings} onChange={(e)=>{const errorMessage =validate(e.target.value);
         setErrorMessage(errorMessage);onChangeNumberOfBeings(e)}}/>
-        <ErrorMessage errorMessage ={errorMessage}/>
+         <ErrorMessage errorMessage ={errorMessage}/>
     </div>
+   
     
     </>
 )

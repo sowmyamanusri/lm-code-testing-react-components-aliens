@@ -13,6 +13,12 @@ body {
 html{
    font-size: 1rem;
 }
+.form__header{
+	font-size: 1.2rem;
+	text-align: center;
+	margin:10px auto;
+
+}
 
 .container{
 	display:flex;
@@ -47,15 +53,32 @@ html{
 .container:last-child{
     margin:auto;
 	width:100px;
+	text-align: center;
 	
 	
 }
 
-.container .btn{
-	margin-top:10px;
-	padding:10px 20px;
-	font-size: 1rem;
-	background-color:light-orange;
+.submit{
+	padding:5px 10px;
+	font-size:16px;
+	margin-bottom: 20px;
+	background-color:blue;
+	color:white;
+   
+}
+
+
+button{
+ padding:5px 10px;
+ font-size:16px;
+ margin-bottom: 20px;
+ background-color:blue;
+ color:white;
+}
+
+.error__container span{
+ margin : 0 auto;
+ 
 }
 
 .errorMessage{

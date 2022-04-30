@@ -2,9 +2,10 @@ import { useState } from 'react';
 import W12MHeader from './W12MHeader';
 import SpeciesName from './species_name';
 import PlanetName from './planet_name';
-import NumberOfBeings from './number_beings ';
+import NumberOfBeings from './number_of_beings ';
 import SelectOption from './select_options';
 import TextArea from './text_area';
+import AlliensApplicationForm from './testInput';
 
 
 const W12MForm = () => {
@@ -20,7 +21,7 @@ const W12MForm = () => {
 	 function handleSubmit(e:any){
 		 e.preventDefault();
 		console.log(speciesName);
-		console.log(planetName);
+        console.log(planetName);
 		console.log(numberOfBeings);
 		console.log(options);
 		console.log(reasonForSparing);
@@ -29,7 +30,8 @@ const W12MForm = () => {
 		return (
 		<section className='w12MForm'>
 			<W12MHeader />
-			<form>
+			<form onSubmit ={handleSubmit}>
+			<h1 className ="form__header">Application Form</h1>
 			<SpeciesName speciesName ={speciesName}
 			 onChangeSpeciesName ={(e:any)=>setSpeciesName(e.target.value)}/>
 			 <PlanetName planetName ={planetName} 
@@ -40,11 +42,17 @@ const W12MForm = () => {
 			 <TextArea reasonForSparing={reasonForSparing} 
 			 onChangeReasonForSparing ={(e:any)=>setReasonForSparing(e.target.value)}/>
 			  <div className="container">
-             <button type="button" className="btn" id="btn" onClick ={handleSubmit}>Submit</button>
+             <input type ="submit" className="submit" data-testid ="submit" placeholder="Submit" />
              </div>
 			 </form>
-			  <div id ="formValues"></div>
+			  <div id ="formValues">
+				  <AlliensApplicationForm speciesName={speciesName} planetName ={planetName} 
+				  numberOfBeings={numberOfBeings} options={options} reasonForSparing ={reasonForSparing}/>
+			  </div>
+            
 			</section>
+
+		
 			
 	);
 };

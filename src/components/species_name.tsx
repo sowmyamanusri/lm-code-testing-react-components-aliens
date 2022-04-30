@@ -15,8 +15,7 @@ const  SpeciesName :React.FC<{speciesName:string, onChangeSpeciesName:any}> = ({
             return ("Character should not be less than 3 and not more than 23 ");
         }else if(inputStr.match(/[^a-zA-Z]/)){
            return("numbers and special characters are not allowed");
-        
-    }
+        }
 }
     return(
     <>
@@ -26,8 +25,9 @@ const  SpeciesName :React.FC<{speciesName:string, onChangeSpeciesName:any}> = ({
      value = {speciesName} onChange ={(e)=>{const errorMessage =validate(e.target.value);
         setErrorMessage(errorMessage); onChangeSpeciesName(e);
         }} />
-         <ErrorMessage errorMessage ={errorMessage}/>
+        <ErrorMessage errorMessage ={errorMessage}/>
     </div>
+    
     </>
     )
 }

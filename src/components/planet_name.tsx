@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import{ErrorMessage} from './error_msg';
-interface PlanetNameProps{
+ export interface PlanetNameProps{
   planetName:string,
   onChangePlanetName : (e:React.ChangeEvent<HTMLInputElement>) => void
 }
@@ -19,10 +19,12 @@ const PlanetName : React.FC <PlanetNameProps> = ({planetName,onChangePlanetName}
     <>
      <div className ="container">
     <label htmlFor="planetName">Planet Name :  </label>
-    <input id ="planetName" type="text" value ={planetName} onChange ={(e)=>{const errorMessage = validate(e.target.value);
+    <input data-testid ="planetName" type="text" value ={planetName}
+     onChange ={(e)=>{const errorMessage = validate(e.target.value);
       setErrorMessage(errorMessage);onChangePlanetName(e)}} />
-      <ErrorMessage errorMessage ={errorMessage}/>
+       <ErrorMessage errorMessage ={errorMessage}/>
      </div>
+     
     </>
 )
 }

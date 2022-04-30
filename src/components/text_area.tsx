@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {ErrorMessage} from './error_msg';
 
- interface TextAreaProps {
+export interface TextAreaProps {
     reasonForSparing:string,
     onChangeReasonForSparing:(e:React.ChangeEvent<HTMLTextAreaElement>)=>void;
 }
@@ -21,7 +21,7 @@ const validate :(inputStr : string) =>string|undefined =(inputStr)=>{
     return (
     <div className="container">
     <label htmlFor = "reason" >Reason for Sparing : </label>
-    <textarea  id="reason"  value ={reasonForSparing} onChange={(e)=>{const errorMessage =validate(e.target.value);
+    <textarea data-testid="reason"  value ={reasonForSparing} onChange={(e)=>{const errorMessage =validate(e.target.value);
         setErrorMessage(errorMessage);onChangeReasonForSparing(e)}}/>
     <ErrorMessage errorMessage ={errorMessage}/>
     </div>

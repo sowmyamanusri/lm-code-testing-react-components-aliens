@@ -9,15 +9,13 @@ const speciesName :SpeciesNameProps={
     onChangeSpeciesName:onChange
 }
 /*
-{beforeEach(()=>{
+beforeEach(()=>{
     onChange.mockClear();
     render(<SpeciesName {...speciesName} />);
-})}*/
+})*/
 
 
 it('when component is rendered, the Species Name text label is present',()=>{
-    
-
      render(<SpeciesName {...speciesName} />);
      const word = screen.getByText(/Species Name/i);
       expect(word).toBeInTheDocument();
@@ -39,7 +37,7 @@ it('when component is rendered, the Species Name text label is present',()=>{
       expect(screen.getByRole('textbox')).toHaveDisplayValue('humans')
     })
 
-   it('render the species name input',()=>{
+   it('render the component, the species name input field should',()=>{
      render(<SpeciesName {...speciesName} />)
      const inputEl = screen.getByTestId("speciesName");
      expect(inputEl).toBeInTheDocument();
