@@ -18,25 +18,17 @@ describe("AlliensApplicationForm", () => {
   it("should render the basic fields", () => {
     render(<AlliensApplicationForm {...initialValue} />);
 
-    expect(
-      screen.getByRole("heading", { name: /allien's application form/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("textbox", { name: /speciesName/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("textbox", { name: /planetName/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("spinbutton", { name: /numberOfBeings/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /allien's application form/i })).toBeInTheDocument();
+    expect(screen.getByText(/species name:/i)).toBeInTheDocument();
+    expect(screen.getByText(/planet name:/i)).toBeInTheDocument();
+    expect(screen.getByText(/number of beings:/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Submit/i })).toBeInTheDocument();
   });
 
   test("Checking the input Value", () => {
     const setup = () => {
       const utils = render(<AlliensApplicationForm {...initialValue} />);
-      const input = utils.getByLabelText("speciesName");
+      const input = screen.getByRole('combobox');
       return {
         input,
         ...utils,
@@ -46,4 +38,6 @@ describe("AlliensApplicationForm", () => {
     fireEvent.change(input, { target: { value: "Animals" } });
     expect(input.value).toBe("Animals");
   });
+ 
 });
+
