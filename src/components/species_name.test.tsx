@@ -51,7 +51,5 @@ it('when component is rendered, the Species Name text label is present',()=>{
      fireEvent.change(inputValue,{target:{value:'Birds'}});
    })
   
-  
-
-})
+  })
 

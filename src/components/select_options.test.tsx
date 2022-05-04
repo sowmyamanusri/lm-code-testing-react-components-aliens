@@ -10,6 +10,12 @@ describe("SelectOption component",()=>{
         onChangeOptions:onChange
     }
    
+    it('when component render, it should the text waht is 2+2',() =>{
+        render(<SelectOption {...selectOption} />);
+        const inputEl = screen.getByText(/what is 2 \+ 2 :/i);
+        expect(inputEl).toBeInTheDocument();
+
+    })
 
    
     it('when you on change the options, the text should be present',()=>{
@@ -19,7 +25,7 @@ describe("SelectOption component",()=>{
         expect(screen.getByRole('combobox')).toHaveDisplayValue('4');
        
     })
-
+   
 
 
 })
