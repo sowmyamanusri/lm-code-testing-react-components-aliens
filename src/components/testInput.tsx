@@ -9,11 +9,11 @@ export interface AlliensApplicationFormProps {
 
 const AlliensApplicationForm: React.FC<AlliensApplicationFormProps> = () => {
   const initialState = {
-    speciesName: " ",
-    planetName: " ",
+    speciesName: "",
+    planetName: "",
     numberOfBeings: 0,
-    options: " ",
-    reasonForSparing: " ",
+    options: "",
+    reasonForSparing: "",
   };
 
   const [formValues, setFormValues] =
@@ -70,7 +70,7 @@ const AlliensApplicationForm: React.FC<AlliensApplicationFormProps> = () => {
   return (
     <>
       {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div className="ui message success">Signed in successfully</div>
+        <div className="ui message success">Form submitted successfully</div>
       ) : (
         <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
       )}
