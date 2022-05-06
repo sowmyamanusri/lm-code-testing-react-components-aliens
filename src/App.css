@@ -84,3 +84,10 @@ button{
 .errorMessage{
 	color:red;
 }
+ 
+/*testInput formerror */
+
+.form__error{
+	color:red;
+	margin: 0 auto;
+}
